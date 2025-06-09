@@ -21,9 +21,8 @@ app.get("/", (req, res) => {
   res.send("FinMate Backend is running");
 });
 
-app.use('/api/auth', authRouter);
-
-app.use('/api', transactitonsRoute);
+// app.use('/api/auth', authRouter);
+// app.use('/api', transactitonsRoute);
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
