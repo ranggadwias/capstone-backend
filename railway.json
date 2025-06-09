@@ -1,0 +1,13 @@
+{
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  "start": {
+    "cmd": "node src/index.js",
+    "env": {
+      "PORT": "4000"
+    }
+  }
+}
