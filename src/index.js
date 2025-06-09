@@ -1,13 +1,32 @@
 import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import authRouter from './routes/auth/auth.js';
+import transactionsRoute from './routes/transactions/transactions.js';
+
+dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 4000;
 
-app.get('/', (req, res) => {
-  console.log("✅ GET / hit");
-  res.send('🚀 Server works! Hello from Railway');
+app.use(cors({
+  origin: '*',
+  credentials: true
+}));
+
+app.use(express.json());
+
+console.log("Server starting...");
+app.get("/", (req, res) => {
+  console.log("GET / hit");
+  res.send("FinMate Backend is running");
 });
 
+app.use('/api/auth', authRouter);
+app.use('/api', transactionsRoute);
+
+const port = process.env.PORT || 4000;
 app.listen(port, () => {
-  console.log(`✅ Server running on port ${port}`);
+  if (process.env.NODE_ENV !== 'production') {
+    console.log(`[${new Date().toLocaleString('id-ID')}] Server berjalan di port ${port}`);
+  }
 });
