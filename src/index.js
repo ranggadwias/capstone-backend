@@ -15,6 +15,7 @@ app.use(cors({
 
 app.use(express.json());
 
+console.log("Server starting...");
 app.get("/", (req, res) => {
   res.send("FinMate Backend is running");
 });
