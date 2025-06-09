@@ -1,8 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import authRouter from './routes/auth/auth.js';
-import transactitonsRoute from './routes/transactions/transactions.js';
 
 dotenv.config();
 
