@@ -17,6 +17,7 @@ app.use(express.json());
 
 console.log("Server starting...");
 app.get("/", (req, res) => {
+  console.log("GET / hit");
   res.send("FinMate Backend is running");
 });
 
