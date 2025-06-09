@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import authRouter from './routes/auth/auth.js';
-import transactitonsRoute from './routes/transactions/transactions.js';
+import transactionsRoute from './routes/transactions/transactions.js';
 
 dotenv.config();
 
@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/api/auth', authRouter);
-app.use('/api', transactitonsRoute);
+app.use('/api', transactionsRoute);
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
